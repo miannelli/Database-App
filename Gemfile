@@ -38,3 +38,8 @@ gem 'jquery-rails', '~> 2.3.0'
 # gem 'debugger'
 
 gem 'activeadmin'
+
+gem 'pry'
+gem 'pry-remote'
+gem 'pry-stack_explorer'
+gem 'pry-byebug'

@@ -15,6 +15,12 @@ ActiveAdmin.register Faculty do
       f.input :room_number
       f.input :tel_extension
     end
+
+    f.inputs "Courses" do
+      f.input :courses
+    end
+
     f.actions
   end
+
 end
