@@ -1,6 +1,6 @@
 class CreateFaculties < ActiveRecord::Migration
   def change
-    create_table :faculties, primary_key: :banner_id do |t|
+    create_table :faculties do |t|
       t.integer :banner_id
       t.string :first_name
       t.string :last_name
