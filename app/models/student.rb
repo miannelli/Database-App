@@ -15,7 +15,11 @@ class Student < ActiveRecord::Base
       :degree_incoming,
       :dissertation_title,
       :date_left,
-      :email
+      :email,
+      :course_ids
+
+  has_many :registrations
+  has_many :courses, through: :registrations
 
   validates :banner_id, presence: true, uniqueness: true
   validates :first_name, presence: true
