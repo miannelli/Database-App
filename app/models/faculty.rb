@@ -1,7 +1,7 @@
 class Faculty < ActiveRecord::Base
-  	  attr_accessible :banner_id, :first_name, :last_name, :h_index, :college_phone, :cell_phone, :fax, :email, :web_page, :room_number, :tel_extension, :course_ids
+  attr_accessible :banner_id, :first_name, :last_name, :h_index, :college_phone, :cell_phone, :fax, :email, :web_page, :room_number, :tel_extension, :course_ids
       
-  validates :banner_id, presence: true
+  validates :banner_id, presence: true, uniqueness: true
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :h_index, presence: true
