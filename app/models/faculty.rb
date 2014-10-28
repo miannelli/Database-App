@@ -1,5 +1,16 @@
 class Faculty < ActiveRecord::Base
-  attr_accessible :banner_id, :first_name, :last_name, :h_index, :college_phone, :cell_phone, :fax, :email, :web_page, :room_number, :tel_extension, :course_ids
+  attr_accessible :banner_id, 
+    :first_name, 
+    :last_name, 
+    :h_index, 
+    :college_phone, 
+    :cell_phone, 
+    :fax, :email, 
+    :web_page, 
+    :room_number, 
+    :tel_extension, 
+    :course_ids,
+    :research_area_ids
       
   validates :banner_id, presence: true, uniqueness: true
   validates :first_name, presence: true
@@ -11,6 +22,8 @@ class Faculty < ActiveRecord::Base
 
   has_many :course_faculty_junctions
   has_many :courses, through: :course_faculty_junctions
+  has_many :faculty_research_area_junctions
+  has_many :research_areas, through: :faculty_research_area_junctions
 
   def addCourse(course)
   	CourseFacultyJunction.create
