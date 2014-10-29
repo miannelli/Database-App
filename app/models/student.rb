@@ -19,10 +19,13 @@ class Student < ActiveRecord::Base
       :course_ids,
       :thesis_committee_ids,
       :faculty_ids,
-      :thesis_committees_attributes
+      :thesis_committees_attributes,
+      :research_area_ids
 
   has_many :registrations
   has_many :courses, through: :registrations
+  has_many :student_research_area_junctions
+  has_many :research_areas, through: :student_research_area_junctions
   has_many :thesis_committees
   has_many :faculties, through: :thesis_committees
 

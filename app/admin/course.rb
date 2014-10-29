@@ -16,4 +16,18 @@ ActiveAdmin.register Course do
 	  active_admin_comments
 	end
 
+	form do |f|
+		f.inputs "Details" do
+			f.input :name
+			f.input :number_of_credits
+		end
+
+		f.inputs "Research Areas" do
+	  	f.input :research_areas
+	  end
+
+	 	f.actions
+	end
+
+
 end
