@@ -1,10 +1,12 @@
 ActiveAdmin.register Course do
 	menu :label => "Courses"
 
-	# index do
-	#   column :name
-	#   column :number_of_credits
-	# end
+	index do
+	  selectable_column
+	  column :name
+	  column :number_of_credits
+	  default_actions
+	end
 
 	show do |course|
 	  attributes_table do
