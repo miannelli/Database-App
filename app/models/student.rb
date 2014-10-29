@@ -38,4 +38,8 @@ class Student < ActiveRecord::Base
   validates :degree_incoming, presence: true
 
   accepts_nested_attributes_for :thesis_committees, :allow_destroy => true
+
+  def to_s
+    "#{self.first_name} #{self.last_name} - #{self.banner_id}"
+  end
 end
