@@ -43,6 +43,10 @@ ActiveAdmin.register Student do
       end
     end
 
+    f.inputs "Research Areas" do
+      f.input :research_areas
+    end
+
     f.actions
   end
 
