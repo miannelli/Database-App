@@ -16,10 +16,15 @@ class Student < ActiveRecord::Base
       :dissertation_title,
       :date_left,
       :email,
-      :course_ids
+      :course_ids,
+      :thesis_committee_ids,
+      :faculty_ids,
+      :thesis_committees_attributes
 
   has_many :registrations
   has_many :courses, through: :registrations
+  has_many :thesis_committees
+  has_many :faculties, through: :thesis_committees
 
   validates :banner_id, presence: true, uniqueness: true
   validates :first_name, presence: true
@@ -28,4 +33,6 @@ class Student < ActiveRecord::Base
   validates :gre_q, presence: true
   validates :gre_v, presence: true
   validates :degree_incoming, presence: true
+
+  accepts_nested_attributes_for :thesis_committees, :allow_destroy => true
 end

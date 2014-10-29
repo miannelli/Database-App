@@ -1,6 +1,15 @@
 ActiveAdmin.register Student do
   menu :label => "Students"
 
+  index do
+    selectable_column
+    column :banner_id, label: "Banner ID"
+    column :first_name
+    column :last_name
+    column :year_entered
+    default_actions
+  end
+
   form do |f|
     f.inputs "Details" do
       f.input :banner_id, label: "Banner ID"
@@ -27,12 +36,19 @@ ActiveAdmin.register Student do
       f.input :courses
     end
 
+    f.inputs "Thesis Committee" do
+      f.has_many :thesis_committees, heading: 'Thesis Committee Member', :allow_destroy => true do |tc|
+        tc.input :faculty
+        tc.input :start_date
+      end
+    end
+
     f.actions
   end
 
   show :title => proc {|student| "#{student.first_name} #{student.last_name}" } do
   	attributes_table do
-  	  row :banner_id, label: "Banner ID"
+  	  row :banner_id
   	  row :first_name
   	  row :last_name
   	  row :address
@@ -50,6 +66,7 @@ ActiveAdmin.register Student do
   	  row :date_left
   	  row :email  	
   	end
+    active_admin_comments
   end
   
 end

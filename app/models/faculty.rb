@@ -24,6 +24,8 @@ class Faculty < ActiveRecord::Base
   has_many :courses, through: :course_faculty_junctions
   has_many :faculty_research_area_junctions
   has_many :research_areas, through: :faculty_research_area_junctions
+  has_many :thesis_committees
+  has_many :students, through: :thesis_committees
 
   def addCourse(course)
   	CourseFacultyJunction.create
@@ -31,6 +33,10 @@ class Faculty < ActiveRecord::Base
   	  course_id: course.id,
   	  faculty: self.banner_id
   	}
+  end
+  
+  def to_s
+    "#{self.first_name} #{self.last_name} - #{self.banner_id}"
   end
 
 end
