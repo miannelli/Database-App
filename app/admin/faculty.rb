@@ -1,7 +1,7 @@
 ActiveAdmin.register Faculty do
   menu :label => "Faculty"
 
-  index do
+  index title: proc { "Faculty" } do
     selectable_column
     column :banner_id, label: "Banner ID"
     column :first_name
