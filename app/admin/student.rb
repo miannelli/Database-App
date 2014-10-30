@@ -73,4 +73,27 @@ ActiveAdmin.register Student do
     active_admin_comments
   end
   
+  filter :banner_id, label: 'Banner ID'
+  filter :first_name
+  filter :last_name
+  filter :address
+  filter :phone
+  filter :cell_phone
+  filter :year_entered
+  filter :first_e
+  filter :second_e
+  filter :proposal_date
+  filter :defense_date
+  filter :gre_q, label: 'GRE Quantitative'
+  filter :gre_v, label: 'GRE Verbal'
+  filter :degree_incoming
+  filter :dissertation_title
+  filter :date_left
+  filter :email
+  filter :courses
+  filter :registrations
+  filter :research_areas
+  filter :thesis_committees, label: 'Thesis Committee Member'
+  filter :faculties, label: 'Faculty'
+
 end

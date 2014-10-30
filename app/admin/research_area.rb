@@ -7,7 +7,7 @@ ActiveAdmin.register ResearchArea do
   end
 
   show do
-	attributes_table do
+	 attributes_table do
       row :name
       row :description
     end
