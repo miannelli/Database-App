@@ -38,6 +38,7 @@ gem 'jquery-rails', '~> 2.3.0'
 # gem 'debugger'
 
 gem 'activeadmin'
+gem 'country_select', github: 'stefanpenner/country_select'
 
 gem 'pry'
 gem 'pry-remote'
