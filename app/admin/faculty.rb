@@ -1,5 +1,5 @@
 ActiveAdmin.register Faculty do
-  menu :label => "Faculty"
+  menu :label => "Faculty and Staff"
 
   index title: proc { "Faculty" } do
     selectable_column

@@ -15,16 +15,18 @@ ActiveAdmin.register Student do
       f.input :banner_id, label: "Banner ID"
       f.input :first_name
       f.input :last_name
-      f.input :address
+      f.input :street_address
+      f.input :city
+      f.input :state
       f.input :phone
       f.input :cell_phone
       f.input :year_entered
-      f.input :first_e
-      f.input :second_e
+      f.input :first_e, label: "First Exam"
+      f.input :second_e, label: "Second Exam"
       f.input :proposal_date
       f.input :defense_date
-      f.input :gre_q
-      f.input :gre_v
+      f.input :gre_q, label: "GRE Quantitative"
+      f.input :gre_v, label: "GRE Verbal"
       f.input :degree_incoming
       f.input :dissertation_title
       f.input :date_left
@@ -55,7 +57,9 @@ ActiveAdmin.register Student do
   	  row :banner_id
   	  row :first_name
   	  row :last_name
-  	  row :address
+  	  row :street_address
+      row :city
+      row :state
   	  row :phone
   	  row :cell_phone
   	  row :year_entered
@@ -76,7 +80,9 @@ ActiveAdmin.register Student do
   filter :banner_id, label: 'Banner ID'
   filter :first_name
   filter :last_name
-  filter :address
+  filter :street_address
+  filter :city
+  filter :state
   filter :phone
   filter :cell_phone
   filter :year_entered
