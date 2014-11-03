@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/stefanpenner/country_select.git
+  revision: 79755038ca61dafdfebf4c55346d4a2085f98479
+  specs:
+    country_select (2.1.0)
+      countries (~> 0.9, >= 0.9.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -62,6 +69,9 @@ GEM
       execjs
     coffee-script-source (1.8.0)
     columnize (0.8.9)
+    countries (0.9.3)
+      currencies (~> 0.4.2)
+    currencies (0.4.2)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
     devise (3.4.0)
@@ -177,6 +187,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin
   coffee-rails (~> 3.2.1)
+  country_select!
   jquery-rails (~> 2.3.0)
   pry
   pry-byebug
