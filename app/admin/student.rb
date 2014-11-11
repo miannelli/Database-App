@@ -21,15 +21,19 @@ ActiveAdmin.register Student do
       f.input :phone
       f.input :cell_phone
       f.input :year_entered
-      f.input :first_e, label: "First Exam"
-      f.input :second_e, label: "Second Exam"
-      f.input :proposal_date
-      f.input :defense_date
+      f.input :first_e, label: "First Exam", :as => :datepicker
+      f.input :first_exam_second_date, :as => :datepicker
+      f.input :first_exam_result
+      f.input :second_e, label: "Second Exam", :as => :datepicker
+      f.input :proposal_date, :as => :datepicker
+      f.input :defense_date, :as => :datepicker
       f.input :gre_q, label: "GRE Quantitative"
       f.input :gre_v, label: "GRE Verbal"
       f.input :degree_incoming
       f.input :dissertation_title
-      f.input :date_left
+      f.input :google_scholar
+      f.input :web_page
+      f.input :date_left, :as => :datepicker
       f.input :email
 
     end
@@ -64,6 +68,8 @@ ActiveAdmin.register Student do
   	  row :cell_phone
   	  row :year_entered
   	  row :first_e
+      row :first_exam_second_date
+      row :first_exam_result
   	  row :second_e
   	  row :proposal_date
   	  row :defense_date
@@ -71,6 +77,8 @@ ActiveAdmin.register Student do
   	  row :gre_v
   	  row :degree_incoming
   	  row :dissertation_title
+      row :google_scholar
+      row :web_page
   	  row :date_left
   	  row :email  	
   	end
@@ -87,6 +95,8 @@ ActiveAdmin.register Student do
   filter :cell_phone
   filter :year_entered
   filter :first_e
+  filter :first_exam_second_date
+  filter :first_exam_result
   filter :second_e
   filter :proposal_date
   filter :defense_date
@@ -94,6 +104,8 @@ ActiveAdmin.register Student do
   filter :gre_v, label: 'GRE Verbal'
   filter :degree_incoming
   filter :dissertation_title
+  filter :google_scholar
+  filter :web_page
   filter :date_left
   filter :email
   filter :courses
