@@ -10,4 +10,5 @@ class Course < ActiveRecord::Base
   has_many :faculties, through: :course_faculty_junctions
   has_many :course_research_area_junctions
   has_many :research_areas, through: :course_research_area_junctions
+  has_many :course_offerings
 end

@@ -1,6 +1,9 @@
 class Semester < ActiveRecord::Base
   attr_accessible :year, 
-    :session
+    :session,
+    :course_offerings_attributes
+
+  has_many :course_offerings
 
   validates :year, presence: true
   validates :session, 
@@ -13,4 +16,7 @@ class Semester < ActiveRecord::Base
   def to_s
     "#{self.session} #{self.year}"
   end
+
+accepts_nested_attributes_for :course_offerings, :allow_destroy => true
+
 end
