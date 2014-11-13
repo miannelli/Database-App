@@ -38,6 +38,14 @@ ActiveAdmin.register Student do
 
     end
 
+    f.inputs "Adjunct Teaching Positions" do
+      f.has_many :adjunct_teachings, heading: 'Adjunct Teaching Positions', :allow_destroy => true do |tc|
+        tc.input :semester
+        tc.input :number_of_courses
+        tc.input :total_credits
+      end
+    end
+
     f.inputs "Courses" do
       f.input :courses
     end
@@ -113,5 +121,6 @@ ActiveAdmin.register Student do
   filter :research_areas
   filter :thesis_committees, label: 'Thesis Committee Member'
   filter :faculties, label: 'Faculty'
+  filter :adjunct_teachings #We want this to be where adjunct teaching is true
 
 end

@@ -26,6 +26,7 @@ class Student < ActiveRecord::Base
       :thesis_committee_ids,
       :faculty_ids,
       :thesis_committees_attributes,
+      :adjunct_teachings_attributes,
       :research_area_ids
 
   has_many :registrations
@@ -34,6 +35,7 @@ class Student < ActiveRecord::Base
   has_many :research_areas, through: :student_research_area_junctions
   has_many :thesis_committees
   has_many :faculties, through: :thesis_committees
+  has_many :adjunct_teachings
 
   validates :banner_id, presence: true, uniqueness: true
   validates :first_name, presence: true
@@ -44,6 +46,7 @@ class Student < ActiveRecord::Base
   validates :degree_incoming, presence: true
 
   accepts_nested_attributes_for :thesis_committees, :allow_destroy => true
+  accepts_nested_attributes_for :adjunct_teachings, :allow_destroy => true
 
   def to_s
     "#{self.first_name} #{self.last_name} - #{self.banner_id}"

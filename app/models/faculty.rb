@@ -10,7 +10,14 @@ class Faculty < ActiveRecord::Base
     :room_number, 
     :tel_extension, 
     :course_ids,
-    :research_area_ids
+    :research_area_ids,
+    :citations,
+    :department,
+    :title,
+    :laboratory_name,
+    :google_scholar_web_page,
+    :retired_date,
+    :date_left
       
   validates :banner_id, presence: true, uniqueness: true
   validates :first_name, presence: true
