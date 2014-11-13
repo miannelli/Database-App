@@ -22,6 +22,7 @@ ActiveAdmin.register Faculty do
       f.input :email
       f.input :web_page
       f.input :room_number
+      f.input :college_id, as: :select, collection: College.all
       f.input :tel_extension
       f.input :citations
       f.input :department
@@ -56,6 +57,7 @@ ActiveAdmin.register Faculty do
       row :email
       row :web_page
       row :room_number
+      row :college
       row :tel_extension
       row :citations
       row :department

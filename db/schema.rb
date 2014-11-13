@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141113025006) do
+ActiveRecord::Schema.define(:version => 20141113051147) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -115,6 +115,7 @@ ActiveRecord::Schema.define(:version => 20141113025006) do
     t.string   "google_scholar_web_page"
     t.date     "retired_date"
     t.date     "date_left"
+    t.integer  "college_id"
   end
 
   create_table "faculty_research_area_junctions", :force => true do |t|

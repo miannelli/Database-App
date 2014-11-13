@@ -17,7 +17,9 @@ class Faculty < ActiveRecord::Base
     :laboratory_name,
     :google_scholar_web_page,
     :retired_date,
-    :date_left
+    :date_left,
+    :college_id,
+    :college
       
   validates :banner_id, presence: true, uniqueness: true
   validates :first_name, presence: true
@@ -44,6 +46,14 @@ class Faculty < ActiveRecord::Base
   
   def to_s
     "#{self.first_name} #{self.last_name} - #{self.banner_id}"
+  end
+
+  def college
+    College.find_by_id(self.college_id)
+  end
+
+  def college=(c)
+    self.college_id = c.id
   end
 
 end

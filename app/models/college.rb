@@ -5,6 +5,8 @@ class College < ActiveRecord::Base
       :state,
       :country
 
+  has_many :faculties
+
   
 
   def address
