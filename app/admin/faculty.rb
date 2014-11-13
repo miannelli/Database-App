@@ -23,6 +23,13 @@ ActiveAdmin.register Faculty do
       f.input :web_page
       f.input :room_number
       f.input :tel_extension
+      f.input :citations
+      f.input :department
+      f.input :title
+      f.input :laboratory_name
+      f.input :google_scholar_web_page
+      f.input :retired_date
+      f.input :date_left
     end
 
     f.inputs "Courses" do
@@ -50,6 +57,13 @@ ActiveAdmin.register Faculty do
       row :web_page
       row :room_number
       row :tel_extension
+      row :citations
+      row :department
+      row :title
+      row :laboratory_name
+      row :google_scholar_web_page
+      row :retired_date
+      row :date_left
     end
     active_admin_comments
   end
