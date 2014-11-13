@@ -1,12 +1,15 @@
 class CourseOffering < ActiveRecord::Base
   attr_accessible :semester_id,
+    :faculty_ids,
     :course_id,
     :syllabus_link
 
   has_one :course
+  has_many :course_offering_faculty_junctions
+  has_many :faculties, through: :course_offering_faculty_junctions
 
   def to_s
-    "self.course"
+    "#{self.course}"
   end
 
   def semester
@@ -16,4 +19,5 @@ class CourseOffering < ActiveRecord::Base
   def course
     Course.find_by_id(self.course_id)
   end
+
 end

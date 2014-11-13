@@ -29,8 +29,8 @@ class Faculty < ActiveRecord::Base
   validates :web_page, presence: true
   validates :room_number, presence: true
 
-  has_many :course_faculty_junctions
-  has_many :courses, through: :course_faculty_junctions
+  has_many :course_offering_faculty_junctions
+  has_many :course_offerings, through: :course_offering_faculty_junctions
   has_many :faculty_research_area_junctions
   has_many :research_areas, through: :faculty_research_area_junctions
   has_many :thesis_committees

@@ -33,14 +33,9 @@ ActiveAdmin.register Faculty do
       f.input :date_left
     end
 
-    f.inputs "Courses" do
-      f.input :courses
-    end
-
     f.inputs "Research Areas" do
       f.input :research_areas
     end
-
 
     f.actions
   end

@@ -46,8 +46,8 @@ ActiveAdmin.register Student do
       end
     end
 
-    f.inputs "Courses" do
-      f.input :courses
+    f.inputs "Course Offerings" do
+      f.input :course_offerings
     end
 
     f.inputs "Thesis Committee" do

@@ -7,9 +7,13 @@ ActiveAdmin.register Semester do
       f.actions
     end
 
-    f.inputs "Course Offerrings" do
+    f.inputs "Course Offerings" do
+      g = {}
+      Faculty.all.each {|f| g.merge!({f.to_s => f.id})}
+      
       f.has_many :course_offerings, :allow_destroy => true do |tc|
         tc.input :course_id, as: :select, collection: Course.all
+        tc.input :faculties, as: :select, collection: g
         tc.input :syllabus_link
       end
       f.actions
