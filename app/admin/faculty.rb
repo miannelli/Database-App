@@ -29,18 +29,13 @@ ActiveAdmin.register Faculty do
       f.input :title
       f.input :laboratory_name
       f.input :google_scholar_web_page
-      f.input :retired_date
-      f.input :date_left
-    end
-
-    f.inputs "Courses" do
-      f.input :courses
+      f.input :retired_date, :as => :datepicker
+      f.input :date_left, :as => :datepicker
     end
 
     f.inputs "Research Areas" do
       f.input :research_areas
     end
-
 
     f.actions
   end

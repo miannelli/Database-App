@@ -6,8 +6,11 @@ class Course < ActiveRecord::Base
   validates :name, presence: true
   validates :number_of_credits, presence: true
 
-  has_many :course_faculty_junctions
-  has_many :faculties, through: :course_faculty_junctions
   has_many :course_research_area_junctions
   has_many :research_areas, through: :course_research_area_junctions
+  has_many :course_offerings
+
+  def to_s
+    "#{self.name}"
+  end
 end

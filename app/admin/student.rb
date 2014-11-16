@@ -29,13 +29,19 @@ ActiveAdmin.register Student do
       f.input :defense_date, :as => :datepicker
       f.input :gre_q, label: "GRE Quantitative"
       f.input :gre_v, label: "GRE Verbal"
-      f.input :degree_incoming
       f.input :dissertation_title
       f.input :google_scholar
       f.input :web_page
       f.input :date_left, :as => :datepicker
       f.input :email
 
+    end
+
+    f.inputs "Degree Incoming" do
+      g = {}
+      Degree.all.each {|f| g.merge!({f.to_s => f.id})}
+      f.input :degree_id, as: :select, collection: g
+      f.input :degree_incoming
     end
 
     f.inputs "Adjunct Teaching Positions" do
@@ -46,14 +52,16 @@ ActiveAdmin.register Student do
       end
     end
 
-    f.inputs "Courses" do
-      f.input :courses
-    end
+    # f.inputs "Course Offerings" do
+    #   f.input :course_offerings
+    # end
 
     f.inputs "Thesis Committee" do
+      g = {}
+      Faculty.all.each {|f| g.merge!({f.to_s => f.id})}
       f.has_many :thesis_committees, heading: 'Thesis Committee Member', :allow_destroy => true do |tc|
-        tc.input :faculty
-        tc.input :start_date
+        tc.input :faculty, collection: g
+        tc.input :start_date, as: :datepicker
       end
     end
 
