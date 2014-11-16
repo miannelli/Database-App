@@ -27,7 +27,8 @@ class Student < ActiveRecord::Base
       :faculty_ids,
       :thesis_committees_attributes,
       :adjunct_teachings_attributes,
-      :research_area_ids
+      :research_area_ids,
+      :degree_id
 
   has_many :registrations
   has_many :course_offerings, through: :registrations
@@ -50,5 +51,13 @@ class Student < ActiveRecord::Base
 
   def to_s
     "#{self.first_name} #{self.last_name} - #{self.banner_id}"
+  end
+
+  def degree
+    Degree.find_by_id(self.degree_id)
+  end
+
+  def degree=(id)
+    self.degree_id = id
   end
 end
