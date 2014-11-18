@@ -35,6 +35,8 @@ class Faculty < ActiveRecord::Base
   has_many :research_areas, through: :faculty_research_area_junctions
   has_many :thesis_committees
   has_many :students, through: :thesis_committees
+  has_many :mentors
+  has_many :students, through: :thesis_committees
 
   def addCourse(course)
   	CourseFacultyJunction.create

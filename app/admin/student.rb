@@ -71,6 +71,18 @@ ActiveAdmin.register Student do
         end
       end
 
+      tab 'Mentors' do
+        f.inputs do
+          g = {}
+          Faculty.all.each {|f| g.merge!({f.to_s => f.id})}
+          f.has_many :mentors, :allow_destroy => true do |tc|
+            tc.input :faculty, collection: g
+            tc.input :start_date, as: :datepicker
+            tc.input :end_date, as: :datepicker
+          end
+        end
+      end
+
 
     end
     f.actions
