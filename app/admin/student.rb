@@ -83,6 +83,14 @@ ActiveAdmin.register Student do
         end
       end
 
+      tab 'Courses' do
+        f.inputs do
+          f.has_many :registrations, :allow_destroy => true do |tc|
+            tc.input :course_offering
+          end
+        end
+      end
+
 
     end
     f.actions

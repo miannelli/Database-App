@@ -9,7 +9,7 @@ class CourseOffering < ActiveRecord::Base
   has_many :faculties, through: :course_offering_faculty_junctions
 
   def to_s
-    "#{self.course}"
+    "#{self.course} - #{self.semester}"
   end
 
   def semester

@@ -28,6 +28,7 @@ class Student < ActiveRecord::Base
       :thesis_committees_attributes,
       :mentors_attributes,
       :adjunct_teachings_attributes,
+      :registrations_attributes,
       :research_area_ids,
       :degree_id
 
@@ -52,6 +53,7 @@ class Student < ActiveRecord::Base
   accepts_nested_attributes_for :thesis_committees, :allow_destroy => true
   accepts_nested_attributes_for :mentors, :allow_destroy => true
   accepts_nested_attributes_for :adjunct_teachings, :allow_destroy => true
+  accepts_nested_attributes_for :registrations, :allow_destroy => true
 
   def to_s
     "#{self.first_name} #{self.last_name} - #{self.banner_id}"

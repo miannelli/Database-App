@@ -1,24 +1,28 @@
 ActiveAdmin.register Semester do
   form do |f|
-    f.inputs "Details" do
-      f.semantic_errors *f.object.errors.keys
-      f.input :session
-      f.input :year
-      f.actions
-    end
+    tabs do
+      tab "Details" do
+        f.inputs "Details" do
+          f.semantic_errors *f.object.errors.keys
+          f.input :session
+          f.input :year
+        end
+      end
 
-    f.inputs "Course Offerings" do
-      g = {}
-      Faculty.all.each {|f| g.merge!({f.to_s => f.id})}
-      
-      f.has_many :course_offerings, :allow_destroy => true do |tc|
-        tc.input :course_id, as: :select, collection: Course.all
-        tc.input :faculties, as: :select, collection: g
-        tc.input :syllabus_link
+      tab "Course Offerings" do
+        f.inputs "Course Offerings" do
+          g = {}
+          Faculty.all.each {|f| g.merge!({f.to_s => f.id})}
+          
+          f.has_many :course_offerings, heading: "", :allow_destroy => true do |tc|
+            tc.input :course_id, as: :select, collection: Course.all
+            tc.input :faculties, as: :select, collection: g
+            tc.input :syllabus_link
+          end
+        end
       end
       f.actions
     end
-
   end
 
   index do
