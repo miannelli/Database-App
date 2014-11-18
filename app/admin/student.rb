@@ -7,68 +7,72 @@ ActiveAdmin.register Student do
     column :first_name
     column :last_name
     column :year_entered
-    default_actions
+    actions
   end
 
   form do |f|
-    f.inputs "Details" do
-      f.input :banner_id, label: "Banner ID"
-      f.input :first_name
-      f.input :last_name
-      f.input :street_address
-      f.input :city
-      f.input :state
-      f.input :phone
-      f.input :cell_phone
-      f.input :year_entered
-      f.input :first_e, label: "First Exam", :as => :datepicker
-      f.input :first_exam_second_date, :as => :datepicker
-      f.input :first_exam_result
-      f.input :second_e, label: "Second Exam", :as => :datepicker
-      f.input :proposal_date, :as => :datepicker
-      f.input :defense_date, :as => :datepicker
-      f.input :gre_q, label: "GRE Quantitative"
-      f.input :gre_v, label: "GRE Verbal"
-      f.input :dissertation_title
-      f.input :google_scholar
-      f.input :web_page
-      f.input :date_left, :as => :datepicker
-      f.input :email
+    tabs do
+      tab 'Details' do
+        f.inputs "Details" do
+          f.input :banner_id, label: "Banner ID"
+          f.input :first_name
+          f.input :last_name
+          f.input :street_address
+          f.input :city
+          f.input :state
+          f.input :phone
+          f.input :cell_phone
+          f.input :year_entered
+          f.input :first_e, label: "First Exam", :as => :datepicker
+          f.input :first_exam_second_date, :as => :datepicker
+          f.input :first_exam_result
+          f.input :second_e, label: "Second Exam", :as => :datepicker
+          f.input :proposal_date, :as => :datepicker
+          f.input :defense_date, :as => :datepicker
+          f.input :gre_q, label: "GRE Quantitative"
+          f.input :gre_v, label: "GRE Verbal"
+          f.input :dissertation_title
+          f.input :google_scholar
+          f.input :web_page
+          f.input :date_left, :as => :datepicker
+          f.input :email
+        end
 
-    end
+        f.inputs "Degree Incoming" do
+          g = {}
+          Degree.all.each {|f| g.merge!({f.to_s => f.id})}
+          f.input :degree_id, as: :select, collection: g
+          f.input :degree_incoming
+        end
 
-    f.inputs "Degree Incoming" do
-      g = {}
-      Degree.all.each {|f| g.merge!({f.to_s => f.id})}
-      f.input :degree_id, as: :select, collection: g
-      f.input :degree_incoming
-    end
-
-    f.inputs "Adjunct Teaching Positions" do
-      f.has_many :adjunct_teachings, heading: 'Adjunct Teaching Positions', :allow_destroy => true do |tc|
-        tc.input :semester
-        tc.input :number_of_courses
-        tc.input :total_credits
+        f.inputs "Research Areas" do
+          f.input :research_areas
+        end
       end
-    end
 
-    # f.inputs "Course Offerings" do
-    #   f.input :course_offerings
-    # end
-
-    f.inputs "Thesis Committee" do
-      g = {}
-      Faculty.all.each {|f| g.merge!({f.to_s => f.id})}
-      f.has_many :thesis_committees, heading: 'Thesis Committee Member', :allow_destroy => true do |tc|
-        tc.input :faculty, collection: g
-        tc.input :start_date, as: :datepicker
+      tab 'Adjunct Teaching Positions' do
+        f.inputs "Adjunct Teaching Positions" do
+          f.has_many :adjunct_teachings, heading: 'Adjunct Teaching Positions', :allow_destroy => true do |tc|
+            tc.input :semester
+            tc.input :number_of_courses
+            tc.input :total_credits
+          end
+        end
       end
-    end
 
-    f.inputs "Research Areas" do
-      f.input :research_areas
-    end
+      tab 'Thesis Committee' do
+        f.inputs "Thesis Committee" do
+          g = {}
+          Faculty.all.each {|f| g.merge!({f.to_s => f.id})}
+          f.has_many :thesis_committees, heading: 'Thesis Committee Member', :allow_destroy => true do |tc|
+            tc.input :faculty, collection: g
+            tc.input :start_date, as: :datepicker
+          end
+        end
+      end
 
+
+    end
     f.actions
   end
 

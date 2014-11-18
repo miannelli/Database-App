@@ -3,7 +3,7 @@ ActiveAdmin.register ResearchArea do
  	selectable_column
     column :name
     column :description
-    default_actions
+    actions
   end
 
   show do

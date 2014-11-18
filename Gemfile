@@ -37,7 +37,7 @@ gem 'jquery-rails', '~> 2.3.0'
 # To use debugger
 # gem 'debugger'
 
-gem 'activeadmin'
+gem 'activeadmin', github: 'activeadmin'
 gem 'nokogiri'
 gem 'country_select', github: 'stefanpenner/country_select'
 
@@ -45,3 +45,5 @@ gem 'pry'
 gem 'pry-remote'
 gem 'pry-stack_explorer'
 gem 'pry-byebug'
+
+gem 'devise'

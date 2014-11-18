@@ -5,7 +5,7 @@ ActiveAdmin.register Course do
 	  selectable_column
 	  column :name
 	  column :number_of_credits
-	  default_actions
+	  actions
 	end
 
 	show do |course|

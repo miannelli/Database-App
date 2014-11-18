@@ -25,7 +25,7 @@ ActiveAdmin.register Semester do
     selectable_column
     column :session
     column :year
-    default_actions
+    actions
   end
 
   show title: proc {|semester| "#{semester.session} #{semester.year}"} do
