@@ -7,7 +7,7 @@ ActiveAdmin.register Faculty do
     column :first_name
     column :last_name
     column :h_index
-    default_actions
+    actions
   end
 
   form do |f|
