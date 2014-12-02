@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141202171927) do
+ActiveRecord::Schema.define(:version => 20141202173355) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -108,7 +108,6 @@ ActiveRecord::Schema.define(:version => 20141202171927) do
     t.string   "banner_id"
     t.string   "first_name"
     t.string   "last_name"
-    t.float    "h_index"
     t.string   "college_phone"
     t.string   "cell_phone"
     t.string   "fax"
@@ -126,6 +125,7 @@ ActiveRecord::Schema.define(:version => 20141202171927) do
     t.date     "retired_date"
     t.date     "date_left"
     t.integer  "college_id"
+    t.integer  "h_index"
   end
 
   create_table "faculty_research_area_junctions", :force => true do |t|
