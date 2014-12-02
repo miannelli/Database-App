@@ -1,0 +1,9 @@
+Notes
+
+How should we add grade to registrations?
+As an int, string, etc?
+Maybe both?
+Do we want a table for grades?
+
+We need to implement the fellowship an  d fellowship support tables
+Do we want a table for the different types of fellowships instead, where a student has a has one relationship with it?

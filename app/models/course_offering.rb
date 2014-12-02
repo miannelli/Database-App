@@ -2,7 +2,8 @@ class CourseOffering < ActiveRecord::Base
   attr_accessible :semester_id,
     :faculty_ids,
     :course_id,
-    :syllabus_link
+    :syllabus_link,
+    :crn
 
   has_one :course
   has_many :course_offering_faculty_junctions

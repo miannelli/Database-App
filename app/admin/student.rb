@@ -67,6 +67,7 @@ ActiveAdmin.register Student do
           f.has_many :thesis_committees, heading: 'Thesis Committee Member', :allow_destroy => true do |tc|
             tc.input :faculty, collection: g
             tc.input :start_date, as: :datepicker
+            tc.input :end_date, as: :datepicker
           end
         end
       end

@@ -16,6 +16,7 @@ ActiveAdmin.register Semester do
           
           f.has_many :course_offerings, heading: "", :allow_destroy => true do |tc|
             tc.input :course_id, as: :select, collection: Course.all
+            tc.input :crn, label: "CRN"
             tc.input :faculties, as: :select, collection: g
             tc.input :syllabus_link
           end
