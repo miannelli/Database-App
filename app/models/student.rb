@@ -66,4 +66,6 @@ class Student < ActiveRecord::Base
   def degree=(id)
     self.degree_id = id
   end
+
+
 end
