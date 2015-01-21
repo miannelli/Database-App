@@ -9,6 +9,7 @@ class Course < ActiveRecord::Base
   has_many :course_research_area_junctions
   has_many :research_areas, through: :course_research_area_junctions
   has_many :course_offerings
+  has_many :registrations
 
   def to_s
     "#{self.name}"

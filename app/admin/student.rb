@@ -11,6 +11,7 @@ ActiveAdmin.register Student do
   end
 
   form do |f|
+    f.semantic_errors *f.object.errors.keys
     tabs do
       tab 'Details' do
         f.inputs "Details" do
@@ -85,9 +86,10 @@ ActiveAdmin.register Student do
       end
 
       tab 'Courses' do
-        f.inputs do
-          f.has_many :registrations, :allow_destroy => true do |tc|
-            tc.input :course_offering
+        f.inputs "Courses" do
+          f.has_many :registrations, :allow_destroy => true, new_record: true do |tc|
+            tc.input :course
+            tc.input :semester
           end
         end
       end

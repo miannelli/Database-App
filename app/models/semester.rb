@@ -4,6 +4,7 @@ class Semester < ActiveRecord::Base
     :course_offerings_attributes
 
   has_many :course_offerings
+  has_many :registrations
 
   validates :year, presence: true
   validates :session, 

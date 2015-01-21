@@ -8,6 +8,8 @@ class CourseOffering < ActiveRecord::Base
   has_one :course
   has_many :course_offering_faculty_junctions
   has_many :faculties, through: :course_offering_faculty_junctions
+  has_many :registrations
+  has_many :students, through: :registrations
 
   def to_s
     "#{self.course} - #{self.semester}"
