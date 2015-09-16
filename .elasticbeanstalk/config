@@ -1,0 +1,14 @@
+[global]
+ApplicationName=Database-App
+AwsCredentialFile=/Users/michael/.elasticbeanstalk/aws_credential_file
+DevToolsEndpoint=git.elasticbeanstalk.us-east-1.amazonaws.com
+EnvironmentName=Database-App
+EnvironmentTier=WebServer::Standard::1.0
+EnvironmentType=SingleInstance
+InstanceProfileName=aws-elasticbeanstalk-ec2-role
+OptionSettingFile=/Users/michael/Database-App/.elasticbeanstalk/optionsettings.Database-App
+RdsEnabled=No
+Region=us-east-1
+ServiceEndpoint=https://elasticbeanstalk.us-east-1.amazonaws.com
+SolutionStack=64bit Amazon Linux 2014.03 v1.0.9 running Ruby 2.0 (Passenger Standalone)
+
