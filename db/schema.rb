@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150120234254) do
+ActiveRecord::Schema.define(:version => 20150324213808) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -184,7 +184,6 @@ ActiveRecord::Schema.define(:version => 20150120234254) do
     t.date     "second_e"
     t.date     "proposal_date"
     t.date     "defense_date"
-    t.float    "gre_q"
     t.float    "gre_v"
     t.string   "degree_incoming"
     t.string   "dissertation_title"
@@ -200,6 +199,7 @@ ActiveRecord::Schema.define(:version => 20150120234254) do
     t.string   "google_scholar"
     t.string   "web_page"
     t.integer  "degree_id"
+    t.float    "encrypted_gre_q"
   end
 
   create_table "thesis_committees", :force => true do |t|

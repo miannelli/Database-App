@@ -32,6 +32,8 @@ class Student < ActiveRecord::Base
       :research_area_ids,
       :degree_id
 
+  attr_encryptor :gre_q, :key => 'a secret key'
+
   has_many :registrations
   has_many :course_offerings, through: :registrations
   has_many :student_research_area_junctions

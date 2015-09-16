@@ -47,3 +47,7 @@ gem 'pry-stack_explorer'
 gem 'pry-byebug'
 
 gem 'devise'
+
+gem 'attr_encrypted'
+
+# gem 'pg'
