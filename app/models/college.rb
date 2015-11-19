@@ -12,4 +12,7 @@ class College < ActiveRecord::Base
   def address
     "#{self.name}\n#{self.street}\n#{self.city}, #{self.state} #{self.country}"
   end
+
+
+
 end
