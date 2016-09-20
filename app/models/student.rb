@@ -69,5 +69,4 @@ class Student < ActiveRecord::Base
     self.degree_id = id
   end
 
-
 end
