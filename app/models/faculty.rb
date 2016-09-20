@@ -57,5 +57,5 @@ class Faculty < ActiveRecord::Base
   def college=(c)
     self.college_id = c.id
   end
-
+  
 end

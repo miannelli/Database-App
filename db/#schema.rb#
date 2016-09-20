@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20160920160005) do
+ActiveRecord::Schema.define(:version => 20150324213808) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -120,12 +120,10 @@ ActiveRecord::Schema.define(:version => 20160920160005) do
     t.integer  "citations"
     t.string   "department"
     t.string   "title"
-    t.string   "laboratory_name"
     t.string   "google_scholar_web_page"
     t.date     "retired_date"
     t.date     "date_left"
     t.integer  "h_index"
-    t.integer  "college_id"
   end
 
   create_table "faculty_research_area_junctions", :force => true do |t|
