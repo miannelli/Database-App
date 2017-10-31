@@ -32,6 +32,7 @@ ActiveAdmin.register Student do
           f.input :defense_date, :as => :datepicker
           f.input :gre_q, label: "GRE Quantitative"
           f.input :gre_v, label: "GRE Verbal"
+          f.input :gpa, label: "GPA"
           f.input :dissertation_title
           f.input :google_scholar
           f.input :web_page
@@ -118,6 +119,7 @@ ActiveAdmin.register Student do
   	  row :defense_date
   	  row :gre_q
   	  row :gre_v
+  	  row :gpa
   	  row :degree_incoming
   	  row :dissertation_title
       row :google_scholar
@@ -145,6 +147,7 @@ ActiveAdmin.register Student do
   filter :defense_date
   filter :gre_q, label: 'GRE Quantitative'
   filter :gre_v, label: 'GRE Verbal'
+  filter :gpa, label: 'GPA'
   filter :degree_incoming
   filter :dissertation_title
   filter :google_scholar
