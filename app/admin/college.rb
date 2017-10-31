@@ -9,7 +9,7 @@ ActiveAdmin.register College do
       f.input :street
       f.input :city
       f.input :state
-      f.input :country
+      f.input :country, :as => :string
     end
 
 
