@@ -30,6 +30,7 @@ ActiveAdmin.register Student do
           f.input :first_exam_result
           f.input :first_exam_status, label: "First Exam Status", :as => :select, :collection => ["Pass", "Fail"]
           f.input :second_e, label: "Second Exam", :as => :date_select, :order => [:year, :month, :day], :start_year=>1970, :end_year=>2025
+          f.input :second_exam_status, label: "Second Exam Status", :as => :select, :collection => ["Pass", "Fail"]
           f.input :proposal_date, :as => :date_select, :order => [:year, :month, :day], :start_year=>1970, :end_year=>2025
           f.input :defense_date, :as => :date_select, :order => [:year, :month, :day], :start_year=>1970, :end_year=>2025
           f.input :gre_q, label: "GRE Quantitative"
@@ -119,6 +120,7 @@ ActiveAdmin.register Student do
       row :first_exam_result
       row :first_exam_status
   	  row :second_e
+      row :second_exam_status
   	  row :proposal_date
   	  row :defense_date
   	  row :gre_q

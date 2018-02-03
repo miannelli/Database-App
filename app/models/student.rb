@@ -13,6 +13,7 @@ class Student < ActiveRecord::Base
       :first_exam_result,
       :first_exam_status,
       :second_e,
+      :second_exam_status,
       :proposal_date,
       :defense_date,
       :gre_q,
