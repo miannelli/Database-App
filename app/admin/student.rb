@@ -24,15 +24,18 @@ ActiveAdmin.register Student do
           f.input :phone
           f.input :cell_phone
           f.input :year_entered
-          f.input :first_e, label: "First Exam", :as => :datepicker
-          f.input :first_exam_second_date, :as => :datepicker
+          #f.input :first_e, label: "First Exam", :as => :datepicker
+          f.input :first_e, label: "First Exam", :as => :date_select, :order => [:year, :month, :day], :start_year=>1970, :end_year=>2025
+          f.input :first_exam_second_date, :as => :date_select, :order => [:year, :month, :day], :start_year=>1970, :end_year=>2025
           f.input :first_exam_result
-          f.input :second_e, label: "Second Exam", :as => :datepicker
-          f.input :proposal_date, :as => :datepicker
-          f.input :defense_date, :as => :datepicker
+          f.input :first_exam_status, label: "First Exam Status", :as => :select, :collection => ["Pass", "Fail"]
+          f.input :second_e, label: "Second Exam", :as => :date_select, :order => [:year, :month, :day], :start_year=>1970, :end_year=>2025
+          f.input :proposal_date, :as => :date_select, :order => [:year, :month, :day], :start_year=>1970, :end_year=>2025
+          f.input :defense_date, :as => :date_select, :order => [:year, :month, :day], :start_year=>1970, :end_year=>2025
           f.input :gre_q, label: "GRE Quantitative"
           f.input :gre_v, label: "GRE Verbal"
           f.input :gpa, label: "GPA"
+          #f.input :mentor
           f.input :dissertation_title
           f.input :google_scholar
           f.input :web_page
@@ -114,12 +117,14 @@ ActiveAdmin.register Student do
   	  row :first_e
       row :first_exam_second_date
       row :first_exam_result
+      row :first_exam_status
   	  row :second_e
   	  row :proposal_date
   	  row :defense_date
   	  row :gre_q
   	  row :gre_v
   	  row :gpa
+  	  #row :mentor
   	  row :degree_incoming
   	  row :dissertation_title
       row :google_scholar
@@ -148,6 +153,7 @@ ActiveAdmin.register Student do
   filter :gre_q, label: 'GRE Quantitative'
   filter :gre_v, label: 'GRE Verbal'
   filter :gpa, label: 'GPA'
+  #filter :mentor
   filter :degree_incoming
   filter :dissertation_title
   filter :google_scholar

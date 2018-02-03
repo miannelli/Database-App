@@ -11,12 +11,14 @@ class Student < ActiveRecord::Base
       :first_e,
       :first_exam_second_date,
       :first_exam_result,
+      :first_exam_status,
       :second_e,
       :proposal_date,
       :defense_date,
       :gre_q,
       :gre_v, 
       :gpa, 
+      #:mentor, 
       :degree_incoming,
       :dissertation_title,
       :google_scholar,
@@ -51,7 +53,6 @@ class Student < ActiveRecord::Base
   validates :year_entered, presence: true
   validates :gre_q, presence: true
   validates :gre_v, presence: true
-  validates :gpa, presence: true
   validates :degree_incoming, presence: true
 
   accepts_nested_attributes_for :thesis_committees, :allow_destroy => true
