@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20180203202854) do
+ActiveRecord::Schema.define(:version => 20180203215507) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -206,6 +206,7 @@ ActiveRecord::Schema.define(:version => 20180203202854) do
     t.string   "street_address_2"
     t.decimal  "gpa"
     t.string   "first_exam_status"
+    t.string   "second_exam_status"
   end
 
   create_table "thesis_committees", :force => true do |t|
