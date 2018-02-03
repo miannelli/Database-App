@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20160920211031) do
+ActiveRecord::Schema.define(:version => 20180203202854) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -125,7 +125,7 @@ ActiveRecord::Schema.define(:version => 20160920211031) do
     t.date     "retired_date"
     t.date     "date_left"
     t.integer  "h_index"
-    t.integer  "college_id"
+    t.string   "college_id"
   end
 
   create_table "faculty_research_area_junctions", :force => true do |t|
@@ -200,7 +200,12 @@ ActiveRecord::Schema.define(:version => 20160920211031) do
     t.string   "google_scholar"
     t.string   "web_page"
     t.integer  "degree_id"
-    t.float    "gre_q"
+    t.float    "encrypted_gre_q"
+    t.integer  "gre_q"
+    t.integer  "zip"
+    t.string   "street_address_2"
+    t.decimal  "gpa"
+    t.string   "first_exam_status"
   end
 
   create_table "thesis_committees", :force => true do |t|
